@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Change Language</title>
+</head>
+<body>
+<h1 id="greeting">Loading...</h1>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('greeting').style.display = 'none';
+
+    fetch('/')
+    .then(response => response.text())
+    .then(text => {
+        document.getElementById('greeting').innerText = "{{ greeting }}";
+        document.getElementById('greeting').style.display = 'block';
+    });
+});
+</script>
+</body>
+</html>
